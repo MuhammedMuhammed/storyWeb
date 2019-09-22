@@ -1,0 +1,94 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            {{ title }}
+        {% endblock title %}
+    </title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ STATIC_URL }}/style.css">
+    <style>
+        label,small
+{
+    width:30px;
+    max-width:50px;
+ }
+    </style>
+
+
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg nav-pills bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="bg-white navbar-toggler-icon"></span>
+          </button>
+
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+             <a class="nav-link float-right" href="#"><img class="rounded" width="24" height="24" src="" /></a>
+          </div>
+
+     </nav>
+         <div class="container">
+
+            <section id="main">
+
+             {% block content %}
+               <div class="row mt-2">
+                   <div class="card">
+                       <div class="card-header">
+                            Some Name
+                       </div>
+                       <div class="card-body">
+                            <img width="130" height="180" src="C:\\Users\\Muhammad\\Pictures\\Screenshots\\user-icon-png-person-user-profile-icon-20.png"/>
+                       </div>
+                       <div class="card-footer">
+                           <small>Name</small>:
+                       </div>
+                   </div>
+               </div>
+
+
+                {% endblock content %}
+                <div style="display:none; position:absolute; width:100%; hight:100%;">
+
+                </div>
+             </section>
+        </div>
+
+     <footer id="footer" class="footer">
+         Copyright &copy;
+        <script type="text/JavaScript">
+                   document.write(new Date().getFullYear());
+        </script> MyStory
+      </footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</body>
+</html>
