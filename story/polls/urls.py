@@ -21,6 +21,7 @@ urlpatterns = [
 
     path('', views.main.index,name="index"),
     path('profile/', profile.profile.index, name="profile"),
-    path('login/', auth.auth.index, name="login"),
+    path('auth/', auth.auth.index, name="auth"),
+    # path('/', auth.auth.index, name="login"),
 
 ]

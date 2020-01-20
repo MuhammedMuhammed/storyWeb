@@ -35,8 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.djangocms_glyphicon_awesome',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'django.djangocms_text_ckeditor',
 ]
 
 MIDDLEWARE = [

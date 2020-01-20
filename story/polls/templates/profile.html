@@ -1,4 +1,25 @@
 {% extends "index.html" %}
 {% block content %}
-                  <a class="nav-link float-left" href="#"><img class="img-thumbnail" height="200" width="200" src="" /></a>
+                <div class="row">
+                    <div class="col">
+                        <a class="nav-link float-left" href="#">
+                              <img class="img-thumbnail" height="200" width="200" src="" />
+                          </a>
+                    </div>
+                    <div class="col">
+                            <form method="POST" enctype="multipart/form-data">
+                                <input type="image" class="form-control"/>
+                            </form>
+                            <label>
+                                Full Name
+                            </label>
+
+                    </div>
+                </div>
+                 <nav class="nav-fill">
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Photos</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Files</a>
+                  </div>
+            </nav>
 {% endblock content %}

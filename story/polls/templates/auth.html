@@ -1,0 +1,60 @@
+{% extends "index.html"%}
+
+    {% block content %}
+              <nav class="nav-fill">
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Register</a>
+                  </div>
+                </nav>
+            <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <form action="{% url 'auth' %}" method="post" enctype="multipart/form-data" class="form m-auto w-50">
+                            {% csrf_token %}
+                            <input type="email" placeholder="e-mail" name="email" class="form-control m-2">
+                            <input type="password" placeholder="password" name="password" class="form-control m-2">
+                            <input type="submit" value="login" class="btn shadow m-2">
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <form action="{% url 'auth' %}" method="post" enctype="multipart/form-data" class="form m-auto w-50">
+                            {% csrf_token %}
+                            <input type="text" placeholder="UserName" name="username" class="form-control m-2">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" placeholder="FirstName" name="FirstName" class="form-control m-2">
+                                </div>
+                                <div class="col">
+                                    <input type="text" placeholder="LastName" name="LastName" class="form-control m-2">
+                                </div>
+                            </div>
+                            <input type="email" placeholder="e-mail" name="email" class="form-control m-2">
+                            <input type="password" placeholder="password" name="password" class="form-control m-2">
+                            <input type="password" placeholder="confirm password" name="confirmpassword" class="form-control m-2">
+                            <input type="tel" placeholder="Phone" name="Phone" class="form-control m-2">
+                            <div class="form-check form-check-inline m-2">
+                                <input id="radio1" type="radio" placeholder="male" name="Gender" value="male" class="form-check-input">
+                                <label for="radio1">male</label>
+                            </div>
+                            <div class="form-check form-check-inline m-2">
+                                <input id="radio2" type="radio" placeholder="female" name="Gender" value="female" class="form-check-input">
+                                <label for="radio2">female</label>
+                            </div>
+                            <div class="form-control m-2">
+                                <label for="birthdate">birthdate</label>
+                                   <div class="input-group date" data-date-format="dd.mm.yyyy">
+                                    <input id="birthdate" type="date" name="birthdate" class="form-control" placeholder="dd.mm.yyyy">
+                                    <div class="input-group-addon" >
+                                          <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                   </div>
+                            </div>
+
+
+                            <input type="submit" value="Register" class="btn float-right shadow m-2">
+                        </form>
+
+                    </div>
+            </div>
+
+    {% endblock %}

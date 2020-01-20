@@ -9,4 +9,5 @@ from django.template import loader
 class profile:
 
     def index(request):
+
         return render(request,"profile.html",{});
