@@ -8,6 +8,7 @@ import pyrebase
 
 # Create your views here.
 class main:
+
     firebaseConfig = {
         'apiKey': "AIzaSyCYNkErgR4_fpfbHJAO_KKxjYH8KRzIT7g",
         'authDomain': "story-84a74.firebaseapp.com",
@@ -38,7 +39,7 @@ class main:
             savedCookie = request.session['UsersEmails']
 
 
-            return render(request, 'index.html', {'title': 'titles', 'cal': 'cal','ips':[ipv4,address,soctype],'cookiesName':savedCookie,'storiesData':list})
-        return render(request, 'index.html', {'title': 'titles', 'cal': 'cal','ips':[ipv4,address,soctype],'cookiesName':None,'storiesData':list})
+            return render(request, 'index.html', {'title': 'titles', 'cal': 'cal','ips':[ipv4,address,soctype],'cookiesName':savedCookie,'storiesData':list,'title':'home'})
+        return render(request, 'index.html', {'title': 'titles', 'cal': 'cal','ips':[ipv4,address,soctype],'cookiesName':None,'storiesData':list,'title':'home'})
 
 

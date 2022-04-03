@@ -22,6 +22,11 @@ urlpatterns = [
     path('', views.main.index,name="index"),
     path('profile/', profile.profile.index, name="profile"),
     path('auth/', auth.auth.index, name="auth"),
+    path('signingUp/', auth.auth.signup, name="signUp"),
+    path('TermsAndConditions/', auth.auth.terms, name="terms"),
+
+    path('signout/', auth.auth.logout, name="signout"),
+
     # path('/', auth.auth.index, name="login"),
 
 ]

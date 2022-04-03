@@ -10,4 +10,4 @@ class profile:
 
     def index(request):
 
-        return render(request,"profile.html",{});
+        return render(request, "profile.html", {});

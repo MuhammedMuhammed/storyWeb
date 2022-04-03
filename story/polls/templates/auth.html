@@ -1,4 +1,7 @@
+
 {% extends "index.html"%}
+    {% load static %}
+
 
     {% block content %}
               <nav class="nav-fill">
@@ -17,7 +20,7 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <form action="{% url 'auth' %}" method="post" enctype="multipart/form-data" class="form m-auto w-50">
+                        <form action="{% url 'signUp' %}" method="post" enctype="multipart/form-data" class="form m-auto w-50">
                             {% csrf_token %}
                             <input type="text" placeholder="UserName" name="username" class="form-control m-2">
                             <div class="row">
@@ -40,21 +43,27 @@
                                 <input id="radio2" type="radio" placeholder="female" name="Gender" value="female" class="form-check-input">
                                 <label for="radio2">female</label>
                             </div>
-                            <div class="form-control m-2">
-                                <label for="birthdate">birthdate</label>
-                                   <div class="input-group date" data-date-format="dd.mm.yyyy">
-                                    <input id="birthdate" type="date" name="birthdate" class="form-control" placeholder="dd.mm.yyyy">
-                                    <div class="input-group-addon" >
-                                          <span class="glyphicon glyphicon-th"></span>
-                                    </div>
-                                   </div>
+                            <div class="form-group m-2">
+                                    <label for="birthdate">birthdate</label>
+                                    <input id="birthdate" type="date" name="birthdate" class="form-control" placeholder="dd.mm.yyyy"/>
+
+
                             </div>
 
+                                <div class="form-group m-2 w-100">
+                                    <input id="privaciesAndPolicies" type="checkbox" name="privaciesAndPolicies" class="form-check-input">
+                                    <p>By clicking this, you accept <a href="https://flycricket.io/story/privacy.html" target="_blank"> Our Privacies Policies.</a> ,and <a>Our Terms and Conditions</a></p>
+                                </div>
+                                <div class="form-check form-check-inline m-2 w-100">
+                                    <input id="disclaimer" type="checkbox" name="disclaimer" class="form-check-input">
+                                    <p >By clicking this, you accept <a>Our Disclaimer.</a> </p>
+                                </div>
 
-                            <input type="submit" value="Register" class="btn float-right shadow m-2">
+                            <input type="submit" value="Register" class="btn btn-block float-right shadow m-2">
                         </form>
 
                     </div>
             </div>
+            <script src="{% static 'js/auth.js' %}"></script>
 
     {% endblock %}
